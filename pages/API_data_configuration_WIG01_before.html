@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NGCircos.js</title>
+    </head>
+    <body>
+        <!-- NGCircos.js, Jquery.js and D3.js import -->
+        <script src="../lib/jquery.js"></script>
+        <script src="../lib/d3.js"></script>
+        <script src="../lib/NGCircos.js"></script>
+        <!-- Prepare a <div> tag with "NGCircos" id to set the picture position your will draw in html -->
+        <div id="NGCircos"></div>
+<!-- Data configuration -->
+<script src="../data/api_data_configuration/WIG01_before.js"></script>
+<script>
+var BACKGROUND01 = [ "BACKGROUND01" , {
+  BginnerRadius: 220,
+  BgouterRadius: 170,
+  BgFillColor: "#F2F2F2",
+  BgborderColor : "#000",
+  BgborderSize : 0.3
+}];
+</script>
+<!-- Genome configuration -->
+<script>
+  var NGCircosGenome = [      // Configure your own genome here.
+    [
+     ["1" , 249250621],
+     ["2" , 243199373],
+     ["3" , 198022430],
+     ["4" , 191154276],
+     ["5" , 180915260],
+     ["6" , 171115067],
+     ["7" , 159138663],
+     ["8" , 146364022],
+     ["9" , 141213431],
+     ["10" , 135534747],
+     ["11" , 135006516],
+     ["12" , 133851895],
+     ["13" , 115169878],
+     ["14" , 107349540],
+     ["15" , 102531392],
+     ["16" , 90354753],
+     ["17" , 81195210],
+     ["18" , 78077248],
+     ["19" , 59128983],
+     ["20" , 63025520],
+     ["21" , 48129895],
+     ["22" , 51304566],
+     ["X" , 155270560],
+     ["Y" , 59373566]
+    ]
+  ];
+  NGCircos01 = new NGCircos(BACKGROUND01,WIG01,NGCircosGenome,{       // Initialize NGCircos.js with "NGCircosGenome" and Main configuration
+     target : "NGCircos",                              // Main configuration "target"
+     svgWidth : 900,                                  // Main configuration "svgWidth"
+     svgHeight : 600,                                 // Main configuration "svgHeight"
+     WIGMouseEvent : true,
+     WIGMouseClickDisplay : false,
+     WIGMouseClickLineOpacity : 1,           //"none"
+     WIGMouseClickLineStrokeColor : "red",   //"none"
+     WIGMouseClickLineStrokeWidth : "none",  //"none"
+     WIGMouseClickFillColor : "none",  //"none"
+     WIGMouseDownDisplay : false,
+     WIGMouseDownLineOpacity : 1,           //"none"
+     WIGMouseDownLineStrokeColor : "red",   //"none"
+     WIGMouseDownLineStrokeWidth : "none",  //"none"
+     WIGMouseDownFillColor : "none",  //"none"
+     WIGMouseEnterDisplay : false,
+     WIGMouseEnterLineOpacity : 1,           //"none"
+     WIGMouseEnterLineStrokeColor : "red",   //"none"
+     WIGMouseEnterLineStrokeWidth : "none",  //"none"
+     WIGMouseEnterFillColor : "none",  //"none"
+     WIGMouseLeaveDisplay : false,
+     WIGMouseLeaveLineOpacity : 1,           //"none"
+     WIGMouseLeaveLineStrokeColor : "red",   //"none"
+     WIGMouseLeaveLineStrokeWidth : "none",  //"none"
+     WIGMouseLeaveFillColor : "none",  //"none"
+     WIGMouseMoveDisplay : false,
+     WIGMouseMoveLineOpacity : 1,           //"none"
+     WIGMouseMoveLineStrokeColor : "red",   //"none"
+     WIGMouseMoveLineStrokeWidth : "none",  //"none"
+     WIGMouseMoveFillColor : "none",  //"none"
+     WIGMouseOutDisplay : true,
+     WIGMouseOutAnimationTime : 500,
+     WIGMouseOutLineOpacity : 1.0,   //"none"
+     WIGMouseOutLineStrokeColor : "red",    //"none"
+     WIGMouseOutLineStrokeWidth : "none",    //"none"
+     WIGMouseOutFillColor : "none",  //"none"
+     WIGMouseUpDisplay : false,
+     WIGMouseUpLineOpacity : 1,           //"none"
+     WIGMouseUpLineStrokeColor : "red",   //"none"
+     WIGMouseUpLineStrokeWidth : "none",  //"none"
+     WIGMouseUpFillColor : "none",  //"none"
+     WIGMouseOverDisplay : false,
+     WIGMouseOverLineOpacity : 1,           //"none"
+     WIGMouseOverLineStrokeColor : "red",   //"none"
+     WIGMouseOverLineStrokeWidth : "none",  //"none"
+     WIGMouseOverFillColor : "none",  //"none"
+     WIGMouseOverTooltipsHtml01 : "Line",
+     WIGMouseOverTooltipsPosition : "absolute",
+     WIGMouseOverTooltipsBackgroundColor : "white",
+     WIGMouseOverTooltipsBorderStyle : "solid",
+     WIGMouseOverTooltipsBorderWidth : 0,
+     WIGMouseOverTooltipsPadding : "3px",
+     WIGMouseOverTooltipsBorderRadius : "3px",
+     WIGMouseOverTooltipsOpacity : 0.8,
+
+  });
+  NGCircos01.draw_genome(NGCircos01.genomeLength);  // NGCircos.js callback
+  NGCircos01.draw_genome(NGCircos01.genomeLength2); // NGCircos2.js callback second time
+</script>
+    </body>
+</html>

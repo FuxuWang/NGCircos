@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NGCircos.js</title>
+    </head>
+    <body>
+        <!-- NGCircos.js, Jquery.js and D3.js import -->
+        <script src="../lib/jquery.js"></script>
+        <script src="../lib/d3.js"></script>
+        <script src="../lib/NGCircos.js"></script>
+        <!-- Prepare a <div> tag with "NGCircos" id to set the picture position your will draw in html -->
+        <div id="NGCircos"></div>
+<!-- Data configuration -->
+<script src="../data/karyotype.human.hg18.js"></script> 
+<script src="../data/Figure_CNV_CNV.js"></script>
+<script src="../data/Figure_LINK_INTER.js"></script>
+<script src="../data/Figure_LINK_INTRA.js"></script>
+<script src="../data/Figure_ARC_LOH.js"></script>
+<script src="../data/Figure_ARC_INSERTION.js"></script>
+<script src="../data/Figure_ARC_DELETION.js"></script>
+<script src="../data/Figure_SCATTER_SILENT.js"></script>
+<script src="../data/Figure_SCATTER_MISSENSE.js"></script>
+<script src="../data/Figure_SCATTER_NONSENSE.js"></script>
+<script src="../data/Figure_SCATTER_SPLICE.js"></script>
+<script src="../data/Figure_HISTOGRAM_HOMO.js"></script>
+<script src="../data/Figure_HISTOGRAM_HETERO.js"></script>
+<!-- Genome configuration -->
+<script>
+  var NGCircosGenome = [ 
+    [
+     ["1" , 247249719],
+     ["2" , 242951149],
+     ["3" , 199501827],
+     ["4" , 191273063],
+     ["5" , 180857866],
+     ["6" , 170899992],
+     ["7" , 158821424],
+     ["8" , 146274826],
+     ["9" , 140273252],
+     ["10" , 135374737],
+     ["11" , 134452384],
+     ["12" , 132349534],
+     ["13" , 114142980],
+     ["14" , 106368585],
+     ["15" , 100338915],
+     ["16" , 88827254],
+     ["17" , 78774742],
+     ["18" , 76117153],
+     ["19" , 63811651],
+     ["20" , 62435964],
+     ["21" , 46944323],
+     ["22" , 49691432],
+     ["X" , 154913754],
+     ["Y" , 57772954]
+    ]
+  ];
+  NGCircos01 = new NGCircos(BACKGROUND01,CNV01,ARC_hg18,LINK_INTER,LINK_INTRA,ARC_LOH,ARC_INSERTION,ARC_DELETION,SCATTER_SILENT,SCATTER_MISSENSE,SCATTER_NONSENSE,SCATTER_SPLICE,HISTOGRAM_HOMO,HISTOGRAM_HETERO,NGCircosGenome,{     //Change here: add data name LINK_INTER,LINK_INTRA,ARC_LOH,ARC_INSERTION,ARC_DELETION,SCATTER_SILENT,SCATTER_MISSENSE,SCATTER_NONSENSE,SCATTER_SPLICE,HISTOGRAM_HOMO,HISTOGRAM_HETERO(data name is defined in data configuration files above.)
+     target : "NGCircos",
+     svgWidth : 900,
+     svgHeight : 600,
+     LINKMouseOverDisplay: true,
+     LINKMouseOverOpacity : 1.0,
+     LINKMouseOverStrokeColor : "none",
+     LINKMouseOverStrokeWidth : 5,
+     LINKMouseOutDisplay : true,
+     LINKMouseOutAnimationTime : 800,
+     LINKMouseOutStrokeColor : "none",
+     LINKMouseOutStrokeWidth : 3,
+     ARCMouseOverDisplay : true,
+     ARCMouseOverColor : "none",
+     ARCMouseOutDisplay : true,
+     ARCMouseOutAnimationTime : 800,
+     ARCMouseOutColor : "none",
+     ARCMouseOutArcStrokeWidth : 0,
+     SCATTERMouseOverDisplay : true,
+     SCATTERMouseOverTooltipsHtml01 : "chr : ",
+     SCATTERMouseOverTooltipsHtml02 : "<br>start : ",
+     SCATTERMouseOverTooltipsHtml03 : "<br>end : ",
+     SCATTERMouseOverTooltipsHtml04 : "<br>name : ",
+     SCATTERMouseOverTooltipsHtml05 : "<br>des : ",
+     SCATTERMouseOverTooltipsHtml06 : "",
+     SCATTERMouseOutDisplay : true,
+     SCATTERMouseOutAnimationTime : 800,
+     SCATTERMouseOutColor : "none",
+     HISTOGRAMMouseOverDisplay : true,
+     HISTOGRAMMouseOverColor : "red",
+     HISTOGRAMMouseOutDisplay : true,
+     HISTOGRAMMouseOutAnimationTime : 500,
+     HISTOGRAMMouseOutColor : "none",
+     CNVMouseOverDisplay : true,
+     CNVMouseOverTooltipsHtml01 : "chr : ",
+     CNVMouseOverTooltipsHtml02 : "<br>start : ",
+     CNVMouseOverTooltipsHtml03 : "<br>end : ",
+     CNVMouseOverTooltipsHtml04 : "<br>copy number : ",
+     CNVMouseOverTooltipsHtml05 : "",
+     CNVMouseOutDisplay : true,
+     CNVMouseOutColor : "none",
+  });
+  NGCircos01.draw_genome(NGCircos01.genomeLength); 
+  NGCircos01.draw_genome(NGCircos01.genomeLength2); // NGCircos2.js callback second time
+</script>
+    </body>
+</html>

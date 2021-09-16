@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>NGCircos.js</title>
+    </head>
+
+    <body>
+        <!-- NGCircos.js, Jquery.js and D3.js import -->
+        <script src="../lib/jquery.js"></script>
+        <script src="../lib/d3.js"></script>
+        <script src="../lib/NGCircos.js"></script>
+        <!-- Prepare a <div> tag with "NGCircos" id to set the picture position your will draw in html -->
+        <div id="NGCircos"></div>
+<!-- Genome configuration -->
+<script>
+var TEXT01 = [ "TEXT01" , {
+   x: -10,
+   y: 0,
+   textSize: 10,
+   textWeight: "bold", //normal,bold,bolder,lighter,100,200,300,400,500,600,700,800,900
+   textColor: "red",
+   textOpacity: 1.0,
+   text: "EGFR"
+}];
+
+  var NGCircosGenome = [
+    [
+     ["EGFR" , 1211],
+    ]
+  ];
+
+  var BACKGROUND01 = [ "BACKGROUND01" , {
+    BginnerRadius: 157,
+    BgouterRadius: 101,
+    BgFillColor: "#F2F2F2",
+    BgborderColor : "#000",
+    BgborderSize : 0.3
+  }];
+  var SNP01 = [ "SNP01" , {
+    maxRadius: 155,
+    minRadius: 103,
+    SNPFillColor: "#9400D3",
+    circleSize: 8,
+    displaySNPAxis: false,
+    SNPAxisColor: "#B8B8B8",
+    SNPAxisWidth: 0.5
+  } , [
+  {chr: "EGFR", pos: "813" , value: "21", des: "G,T,L/R",html:"Gene : EGFR <br>Position(AA) : 813 <br>Sample number : 21 <br>Mutation information : G,T,L/R"},
+  {chr: "EGFR", pos: "805" , value: "21", des: "G,T,L/R",html:"Gene : EGFR <br>Position(AA) : 805 <br>Sample number : 21 <br>Mutation information : G,T,L/R"},
+  {chr: "EGFR", pos: "858" , value: "21", des: "G,T,L/R",html:"Gene : EGFR <br>Position(AA) : 858 <br>Sample number : 21 <br>Mutation information : G,T,L/R"},
+  {chr: "EGFR", pos: "598" , value: "17", des: "T,G,G/V",html:"Gene : EGFR <br>Position(AA) : 598 <br>Sample number : 17 <br>Mutation information : T,G,G/V"},
+  {chr: "EGFR", pos: "553" , value: "17", des: "T,G,G/V",html:"Gene : EGFR <br>Position(AA) : 553 <br>Sample number : 17 <br>Mutation information : T,G,G/V"},
+  {chr: "EGFR", pos: "545" , value: "17", des: "T,G,G/V",html:"Gene : EGFR <br>Position(AA) : 545 <br>Sample number : 17 <br>Mutation information : T,G,G/V"},
+  {chr: "EGFR", pos: "598" , value: "17", des: "T,G,G/V",html:"Gene : EGFR <br>Position(AA) : 598 <br>Sample number : 17 <br>Mutation information : T,G,G/V"},
+  {chr: "EGFR", pos: "289" , value: "16", des: "T,C,A/V",html:"Gene : EGFR <br>Position(AA) : 289 <br>Sample number : 16 <br>Mutation information : T,C,A/V"},
+  {chr: "EGFR", pos: "236" , value: "16", des: "T,C,A/V",html:"Gene : EGFR <br>Position(AA) : 236 <br>Sample number : 16 <br>Mutation information : T,C,A/V"},
+  {chr: "EGFR", pos: "289" , value: "16", des: "T,C,A/V",html:"Gene : EGFR <br>Position(AA) : 289 <br>Sample number : 16 <br>Mutation information : T,C,A/V"},
+  {chr: "EGFR", pos: "244" , value: "16", des: "T,C,A/V",html:"Gene : EGFR <br>Position(AA) : 244 <br>Sample number : 16 <br>Mutation information : T,C,A/V"},
+  {chr: "EGFR", pos: "692" , value: "7", des: "-,GGAATTAAGAGAAGC,KELREA/K",html:"Gene : EGFR <br>Position(AA) : 692 <br>Sample number : 7 <br>Mutation information : -,GGAATTAAGAGAAGC,KELREA/K"},
+  {chr: "EGFR", pos: "745" , value: "7", des: "-,GGAATTAAGAGAAGC,KELREA/K",html:"Gene : EGFR <br>Position(AA) : 745 <br>Sample number : 7 <br>Mutation information : -,GGAATTAAGAGAAGC,KELREA/K"},
+  {chr: "EGFR", pos: "700" , value: "7", des: "-,GGAATTAAGAGAAGC,KELREA/K",html:"Gene : EGFR <br>Position(AA) : 700 <br>Sample number : 7 <br>Mutation information : -,GGAATTAAGAGAAGC,KELREA/K"},
+  {chr: "EGFR", pos: "244" , value: "6", des: "A,G,A/T",html:"Gene : EGFR <br>Position(AA) : 244 <br>Sample number : 6 <br>Mutation information : A,G,A/T"},
+  {chr: "EGFR", pos: "289" , value: "6", des: "A,G,A/T",html:"Gene : EGFR <br>Position(AA) : 289 <br>Sample number : 6 <br>Mutation information : A,G,A/T"},
+  ]];
+
+  NGCircos01 = new NGCircos(TEXT01,BACKGROUND01,SNP01,NGCircosGenome,{
+     target : "NGCircos",
+     svgWidth : 900,
+     svgHeight : 600,
+     innerRadius: 246,
+     outerRadius: 250,
+     zoom : false,
+     ARCMouseOnDisplay: true,
+     SNPMouseEvent : true,
+     SNPMouseOverDisplay : true,
+     SNPMouseOverColor : "green",
+     SNPMouseOverCircleSize : 8,
+     SNPMouseOverCircleOpacity : 1.0,
+     SNPMouseOverCircleStrokeColor : "blue",
+     SNPMouseOverCircleStrokeWidth : 3,
+     SNPMouseOverTooltipsSetting : "custom",
+     SNPMouseOverTooltipsHtml05 : "",
+     genomeFillColor: ["#999999"],
+     ticks : {
+        display : true,
+        len : 5,
+        color : "#000",
+        textSize : 8,
+        textColor : "#000",
+        scale : 20
+     },
+     genomeLabel : {
+        display : false,
+        textSize : 16,
+        textColor : "red",
+        dx : 3.14,
+        dy : "-0.95em"
+     }
+  });
+  NGCircos01.draw_genome(NGCircos01.genomeLength);
+  NGCircos01.draw_genome(NGCircos01.genomeLength2);
+</script>
+    </body>
+
+
+</html>

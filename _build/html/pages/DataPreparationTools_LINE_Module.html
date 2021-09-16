@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NGCircos.js</title>
+    </head>
+    <body>
+        <!-- NGCircos.js, Jquery.js and D3.js import -->
+        <script src="../lib/jquery.js"></script>
+        <script src="../lib/d3.js"></script>
+        <script src="../lib/NGCircos.js"></script>
+        <!-- Prepare a <div> tag with "NGCircos" id to set the picture position your will draw in html -->
+        <div id="NGCircos"></div>
+<!-- Data configuration -->
+<script src="../data/data_prepare/LINE01.js"></script>
+<script>
+var BACKGROUND01 = [ "BACKGROUND01" , {
+  BginnerRadius: 220,
+  BgouterRadius: 170,
+  BgFillColor: "#F2F2F2",
+  BgborderColor : "#000",
+  BgborderSize : 0.3
+}];
+</script>
+<!-- Genome configuration -->
+<script>
+  var NGCircosGenome = [      // Configure your own genome here.
+    [
+     ["1" , 249250621],
+     ["2" , 243199373],
+     ["3" , 198022430],
+     ["4" , 191154276],
+     ["5" , 180915260],
+     ["6" , 171115067],
+     ["7" , 159138663],
+     ["8" , 146364022],
+     ["9" , 141213431],
+     ["10" , 135534747],
+     ["11" , 135006516],
+     ["12" , 133851895],
+     ["13" , 115169878],
+     ["14" , 107349540],
+     ["15" , 102531392],
+     ["16" , 90354753],
+     ["17" , 81195210],
+     ["18" , 78077248],
+     ["19" , 59128983],
+     ["20" , 63025520],
+     ["21" , 48129895],
+     ["22" , 51304566],
+     ["X" , 155270560],
+     ["Y" , 59373566]
+    ]
+  ];
+  NGCircos01 = new NGCircos(BACKGROUND01,LINE01,NGCircosGenome,{       // Initialize NGCircos.js with "NGCircosGenome" and Main configuration
+     target : "NGCircos",                              // Main configuration "target"
+     svgWidth : 900,                                  // Main configuration "svgWidth"
+     svgHeight : 600,                                 // Main configuration "svgHeight"
+     LINEMouseEvent : true,
+     LINEMouseClickDisplay : false,
+     LINEMouseClickLineOpacity : 1,           //"none"
+     LINEMouseClickLineStrokeColor : "red",   //"none"
+     LINEMouseClickLineStrokeWidth : "none",  //"none"
+     LINEMouseDownDisplay : false,
+     LINEMouseDownLineOpacity : 1,           //"none"
+     LINEMouseDownLineStrokeColor : "red",   //"none"
+     LINEMouseDownLineStrokeWidth : "none",  //"none"
+     LINEMouseEnterDisplay : false,
+     LINEMouseEnterLineOpacity : 1,           //"none"
+     LINEMouseEnterLineStrokeColor : "red",   //"none"
+     LINEMouseEnterLineStrokeWidth : "none",  //"none"
+     LINEMouseLeaveDisplay : false,
+     LINEMouseLeaveLineOpacity : 1,           //"none"
+     LINEMouseLeaveLineStrokeColor : "red",   //"none"
+     LINEMouseLeaveLineStrokeWidth : "none",  //"none"
+     LINEMouseMoveDisplay : false,
+     LINEMouseMoveLineOpacity : 1,           //"none"
+     LINEMouseMoveLineStrokeColor : "red",   //"none"
+     LINEMouseMoveLineStrokeWidth : "none",  //"none"
+     LINEMouseOutDisplay : true,
+     LINEMouseOutAnimationTime : 500,
+     LINEMouseOutLineOpacity : 1.0,   //"none"
+     LINEMouseOutLineStrokeColor : "red",    //"none"
+     LINEMouseOutLineStrokeWidth : "none",    //"none"
+     LINEMouseUpDisplay : false,
+     LINEMouseUpLineOpacity : 1,           //"none"
+     LINEMouseUpLineStrokeColor : "red",   //"none"
+     LINEMouseUpLineStrokeWidth : "none",  //"none"
+     LINEMouseOverDisplay : false,
+     LINEMouseOverLineOpacity : 1,           //"none"
+     LINEMouseOverLineStrokeColor : "red",   //"none"
+     LINEMouseOverLineStrokeWidth : "none",  //"none"
+     LINEMouseOverTooltipsHtml01 : "Line",
+     LINEMouseOverTooltipsPosition : "absolute",
+     LINEMouseOverTooltipsBackgroundColor : "white",
+     LINEMouseOverTooltipsBorderStyle : "solid",
+     LINEMouseOverTooltipsBorderWidth : 0,
+     LINEMouseOverTooltipsPadding : "3px",
+     LINEMouseOverTooltipsBorderRadius : "3px",
+     LINEMouseOverTooltipsOpacity : 0.8,
+
+  });
+  NGCircos01.draw_genome(NGCircos01.genomeLength);  // NGCircos.js callback
+  NGCircos01.draw_genome(NGCircos01.genomeLength2); // NGCircos2.js callback second time
+</script>
+    </body>
+</html>

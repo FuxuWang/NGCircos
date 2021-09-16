@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NGCircos.js</title>
+    </head>
+    <body>
+        <!-- NGCircos.js, Jquery.js and D3.js import -->
+        <script src="../lib/jquery.js"></script>
+        <script src="../lib/d3.js"></script>
+        <script src="../lib/NGCircos.js"></script>
+        <!-- Prepare a <div> tag with "NGCircos" id to set the picture position your will draw in html -->
+        <div id="NGCircos"></div>
+<!-- Data configuration -->
+<script src="../data/api_data_configuration/COMPARE01_after.js"></script>
+<!-- Genome configuration -->
+<script>
+  var NGCircosGenome = [
+  [
+    ["chr8",1000],
+  ],[
+    ["chr8",1000],
+  ]
+  ];
+  NGCircos1 = new NGCircos(WIG01,WIG02, NGCircosGenome,{
+  target:"NGCircos",
+  svgWidth:900,
+  svgHeight:600,
+  svgClassName:"compare",
+  chrPad:0.04,
+  innerRadius:246,
+  outerRadius:250,
+  zoom:true,
+  compareEvent:true,
+  compareEventGroupGapRate:0.4,
+  compareEventGroupDistance:300,
+  genomeFillColor:["#999999"],
+  ticks:{
+  display:false,
+  len:5,
+  color:"#000",
+  textSize:10,
+  textColor:"#000",
+  scale:30000000,
+  realLength:false,
+  },
+  genomeLabel:{
+  display:true,
+  textSize:15,
+  textColor:"#000",
+  dx:0.028,
+  dy:"-0.55em",
+  },
+  genomeBorder:{
+  display:true,
+  borderColor:"#000",
+  borderSize:0.5,
+  },
+  });
+  NGCircos1.draw_genome(NGCircos1.genomeLength);
+  NGCircos1.draw_genome(NGCircos1.genomeLength2);
+
+</script>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>NGCircos.js</title>
+    </head>
+
+    <body>
+        <!-- NGCircos.js, Jquery.js and D3.js import -->
+        <script src="../lib/jquery.js"></script>
+        <script src="../lib/d3.js"></script>
+        <script src="../lib/NGCircos.js"></script>
+        <!-- Prepare a <div> tag with "NGCircos" id to set the picture position your will draw in html -->
+        <div id="NGCircos"></div>
+<!-- Data configuration -->
+<script src="../data/karyotype.human.hg18.js"></script>
+<script src="../data/gallery/gallery05_SNP01.js"></script>
+<script src="../data/gallery/gallery05_SNP02.js"></script>
+<script src="../data/gallery/gallery05_SNP03.js"></script>
+<script src="../data/gallery/gallery05_LINK01.js"></script>
+<!-- Genome configuration -->
+<script>
+  var NGCircosGenome = [
+    [
+     ["1" , 247249719],
+     ["2" , 242951149],
+     ["3" , 199501827],
+     ["4" , 191273063],
+     ["5" , 180857866],
+     ["6" , 170899992],
+     ["7" , 158821424],
+     ["8" , 146274826],
+     ["9" , 140273252],
+     ["10" , 135374737],
+     ["11" , 134452384],
+     ["12" , 132349534],
+     ["13" , 114142980],
+     ["14" , 106368585],
+     ["15" , 100338915],
+     ["16" , 88827254],
+     ["17" , 78774742],
+     ["18" , 76117153],
+     ["19" , 63811651],
+     ["20" , 62435964],
+     ["21" , 46944323],
+     ["22" , 49691432],
+     ["X" , 154913754],
+     ["Y" , 57772954]
+    ]
+  ];
+
+  NGCircos01 = new NGCircos(ARC_hg18,LINK01,BACKGROUND01,BACKGROUND02,BACKGROUND03,SNP01,SNP02,SNP03,NGCircosGenome,{
+     target : "NGCircos",
+     svgWidth : 900,
+     svgHeight : 600,
+     chrPad : 0.04,
+     innerRadius: 246,
+     outerRadius: 270,
+     SNPMouseOverDisplay : true,
+     SNPMouseOverColor : "red",
+     SNPMouseOverCircleSize : 5,
+     SNPMouseOverCircleOpacity : 1.0,
+     SNPMouseOverCircleStrokeColor : "#F26223",
+     SNPMouseOverCircleStrokeWidth : 3,
+     SNPMouseOverTooltipsHtml01 : "chr : ",
+     SNPMouseOverTooltipsHtml02 : "<br>position : ",
+     SNPMouseOverTooltipsHtml03 : "<br>value : ",
+     SNPMouseOverTooltipsHtml04 : "<br>des : ",
+     SNPMouseOverTooltipsHtml05 : "",
+     SNPMouseOverTooltipsBorderWidth : 1,
+     SNPMouseOutDisplay : true,
+     SNPMouseOutAnimationTime : 700,
+     SNPMouseOutColor : "none",
+     SNPMouseOutCircleSize : "none",
+     SNPMouseOutCircleOpacity : 1.0,
+     SNPMouseOutCircleStrokeWidth : 0,
+     LINKMouseEvent : true,
+     LINKMouseClickDisplay : true,
+     LINKMouseClickOpacity : 1.0,
+     LINKMouseClickStrokeColor : "green",
+     LINKMouseClickStrokeWidth : 4,
+  });
+  NGCircos01.draw_genome(NGCircos01.genomeLength);
+  NGCircos01.draw_genome(NGCircos01.genomeLength2); // NGCircos2.js callback second time
+</script>
+
+    </body>
+
+
+</html>

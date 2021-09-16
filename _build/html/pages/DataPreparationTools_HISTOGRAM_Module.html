@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NGCircos.js</title>
+    </head>
+    <body>
+        <!-- NGCircos.js, Jquery.js and D3.js import -->
+        <script src="../lib/jquery.js"></script>
+        <script src="../lib/d3.js"></script>
+        <script src="../lib/NGCircos.js"></script>
+        <!-- Prepare a <div> tag with "NGCircos" id to set the picture position your will draw in html -->
+        <div id="NGCircos"></div>
+<!-- Data configuration -->
+<script src="../data/data_prepare/HISTOGRAM01.js"></script>
+<!-- Genome configuration -->
+<script>
+  var NGCircosGenome = [      // Configure your own genome here.
+    [
+     ["2L" , 23011544],
+     ["2R" , 21146708],
+     ["3L" , 24543557],
+     ["3R" , 27905053],
+     ["X" , 22422827],
+     ["4" , 1351857]
+    ]
+  ];
+  NGCircos01 = new NGCircos(HISTOGRAM01,NGCircosGenome,{       // Initialize NGCircos.js with "NGCircosGenome" and Main configuration
+     target : "NGCircos",                              // Main configuration "target"
+     svgWidth : 900,                                  // Main configuration "svgWidth"
+     svgHeight : 600,                                 // Main configuration "svgHeight"
+     innerRadius: 246,
+     outerRadius: 252,
+     ticks : {
+        display : true,
+        len : 5,
+        color : "#000",
+        textSize : 8,
+        textColor : "#000",
+        scale : 5000000
+     },
+     genomeLabel : {
+        display : true,
+        textSize : 16,
+        textColor : "#000",
+        dx : 3.14,
+        dy : "-0.95em"
+     },
+     HISTOGRAMMouseEvent: true,
+     HISTOGRAMMouseOutDisplay: true,
+     HISTOGRAMMouseOutAnimationTime: 500,
+     HISTOGRAMMouseOutColor: "red",
+     HISTOGRAMMouseOutOpacity: 1,
+     HISTOGRAMMouseOutStrokeColor: "red",
+     HISTOGRAMMouseOutStrokeWidth: 0,
+     HISTOGRAMMouseOverDisplay: true,
+     HISTOGRAMMouseOverColor: "red",
+     HISTOGRAMMouseOverOpacity: 1,
+     HISTOGRAMMouseOverStrokeColor: "#F26223",
+     HISTOGRAMMouseOverStrokeWidth: 3,
+  });
+  NGCircos01.draw_genome(NGCircos01.genomeLength);  // NGCircos.js callback
+  NGCircos01.draw_genome(NGCircos01.genomeLength2); // NGCircos2.js callback second time
+</script>
+    </body>
+</html>

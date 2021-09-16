@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>NGCircos.js</title>
+    </head>
+
+    <body>
+        <!-- NGCircos.js, Jquery.js and D3.js import -->
+        <script src="../lib/jquery.js"></script>
+        <script src="../lib/d3.js"></script>
+        <script src="../lib/NGCircos.js"></script>
+        <!-- Prepare a <div> tag with "example" id to set the picture position your will draw in html -->
+        <div id="NGCircos"></div>
+<!-- Genome configuration -->
+<script src="../data/karyotype.mouse.mm10.js"></script>
+<script src="../data/gallery/gallery12_LINK01.js"></script>
+<script>
+  var NGCircosGenome = [
+    [
+     ["1" , 195471971],
+     ["2" , 182113224],
+     ["3" , 160039680],
+     ["4" , 156508116],
+     ["5" , 151834684],
+     ["6" , 149736546],
+     ["7" , 145441459],
+     ["8" , 129401213],
+     ["9" , 124595110],
+     ["10" , 130694993],
+     ["11" , 122082543],
+     ["12" , 120129022],
+     ["13" , 120421639],
+     ["14" , 124902244],
+     ["15" , 104043685],
+     ["16" , 98207768],
+     ["17" , 94987271],
+     ["18" , 90702639],
+     ["19" , 61431566],
+     ["X" , 171031299],
+     ["Y" , 91744698]
+    ]
+  ];
+
+  NGCircos01 = new NGCircos(ARC_mm10,LINK01,NGCircosGenome,{
+     target : "NGCircos",
+     svgWidth : 900,
+     svgHeight : 600,
+     innerRadius: 246,
+     outerRadius: 270,
+     LINKMouseOnDisplay: true
+  });
+  NGCircos01.draw_genome(NGCircos01.genomeLength);
+  NGCircos01.draw_genome(NGCircos01.genomeLength2); // NGCircos2.js callback second time
+</script>
+    </body>
+
+
+</html>

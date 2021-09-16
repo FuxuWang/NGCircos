@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>NGCircos.js</title>
+    </head>
+
+    <body>
+        <!-- NGCircos.js, Jquery.js and D3.js import -->
+        <script src="../lib/jquery.js"></script>
+        <script src="../lib/d3.js"></script>
+        <script src="../lib/NGCircos.js"></script>
+        <!-- Prepare a <div> tag with "NGCircos" id to set the picture position your will draw in html -->
+        <div id="NGCircos"></div>
+<!-- Data configuration -->
+<script src="../data/gallery/gallery11_ARC.js"></script>
+<script src="../data/gallery/gallery11_LINK.js"></script>
+<!-- Genome configuration -->
+<style>
+    .NGCircosLINKTooltip{  
+    position: absolute;  
+    width: 120;  
+    height: auto;  
+    font-family: simsun;  
+    font-size: 14px;  
+    text-align: center;  
+    border-style: solid;   
+    border-width: 3px;  
+    background-color: red;  
+    border-radius: 5px;  
+    }
+</style>
+<script>
+  var NGCircosGenome = [
+    [
+     ["EML4" , 982],
+     ["ALK" , 1621],
+    ]
+  ];
+  NGCircos01 = new NGCircos(ARC01,ARC02,ARC03,ARC04,ARC05,ARC06,LINK01,LINK02,LINK03,LINK04,NGCircosGenome,{
+     target : "NGCircos",
+     svgWidth : 900,
+     svgHeight : 600,
+     zoom : true,
+     innerRadius: 246,
+     outerRadius: 250,
+     LINKMouseEvent : true,
+     LINKMouseClickDisplay : false,
+     LINKMouseClickColor : "green",
+     LINKMouseClickStrokeWidth : 4,
+     LINKMouseClickStrokeOpacity : 1.0,
+     LINKMouseDownDisplay : false,
+     LINKMouseDownOpacity : 1.0,
+     LINKMouseDownStrokeColor : "#F26223",
+     LINKMouseDownStrokeWidth : 1,
+     LINKMouseEnterDisplay : false,
+     LINKMouseEnterOpacity : 1.0,
+     LINKMouseEnterStrokeColor : "red",
+     LINKMouseEnterStrokeWidth : "none",
+     LINKMouseLeaveDisplay : false,
+     LINKMouseLeaveColor : "pink",
+     LINKMouseLeaveOpacity : 1.0,
+     LINKMouseLeaveStrokeColor : "#F26223",
+     LINKMouseLeaveStrokeWidth : 0,
+     LINKMouseMoveDisplay : false,
+     LINKMouseMoveOpacity : 1.0,
+     LINKMouseMoveStrokeColor : "#F26223",
+     LINKMouseMoveStrokeWidth : 0,
+     LINKMouseOutDisplay : false,
+     LINKMouseOutAnimationTime : 500,
+     LINKMouseOutOpacity : 1.0,
+     LINKMouseOutStrokeColor : "red",
+     LINKMouseOutStrokeWidth : 1,
+     LINKMouseUpDisplay : false,
+     LINKMouseUpOpacity : 1.0,
+     LINKMouseUpStrokeColor : "#F26223",
+     LINKMouseUpStrokeWidth : 0,
+     LINKMouseOverDisplay : true,
+     LINKMouseOverOpacity : 1.0,
+     LINKMouseOverStrokeColor : "#F26223",  //"none","#F26223"
+     LINKMouseOverStrokeWidth : "none",  //"none",3
+     LINKMouseOverTooltipsHtml01 : "Gene: ",
+     LINKMouseOverTooltipsHtml02 : "<br>Position: ",
+     LINKMouseOverTooltipsHtml03 : "<br>Value: ",
+     LINKMouseOverTooltipsHtml04 : "<br>Des: ",
+     LINKMouseOverTooltipsHtml05 : "",
+     LINKMouseOverTooltipsPosition : "absolute",
+     LINKMouseOverTooltipsBackgroundColor : "white",
+     LINKMouseOverTooltipsBorderStyle : "solid",
+     LINKMouseOverTooltipsBorderWidth : 0,
+     LINKMouseOverTooltipsPadding : "3px",
+     LINKMouseOverTooltipsBorderRadius : "3px",
+     LINKMouseOverTooltipsOpacity : 0.8,
+     LINKLabelDragEvent : true,
+     ARCMouseEvent : true,
+     ARCMouseClickDisplay : true,
+     ARCMouseClickColor : "none",
+     ARCMouseClickArcOpacity : 1.0,
+     ARCMouseClickArcStrokeColor : "#F26223",
+     ARCMouseClickArcStrokeWidth : 1,
+     ARCMouseClickTextFromData : "fifth",   //first,second,third,fifth column
+     ARCMouseClickTextOpacity : 1,
+     ARCMouseClickTextColor : "#000",
+     ARCMouseClickTextSize : 8,
+     ARCMouseClickTextPostionX : 0,
+     ARCMouseClickTextPostionY : 0,
+     ARCMouseClickTextDrag : true,
+     ARCMouseDownDisplay : false,
+     ARCMouseDownColor : "none",
+     ARCMouseDownArcOpacity : 1.0,
+     ARCMouseDownArcStrokeColor : "#F26223",
+     ARCMouseDownArcStrokeWidth : 1,
+     ARCMouseEnterDisplay : false,
+     ARCMouseEnterColor : "none",
+     ARCMouseEnterArcOpacity : 1.0,
+     ARCMouseEnterArcStrokeColor : "#F26223",
+     ARCMouseEnterArcStrokeWidth : 1,
+     ARCMouseLeaveDisplay : false,
+     ARCMouseLeaveColor : "none",
+     ARCMouseLeaveArcOpacity : 1.0,
+     ARCMouseLeaveArcStrokeColor : "#F26223",
+     ARCMouseLeaveArcStrokeWidth : 0,
+     ARCMouseMoveDisplay : false,
+     ARCMouseMoveColor : "none",
+     ARCMouseMoveArcOpacity : 1.0,
+     ARCMouseMoveArcStrokeColor : "#F26223",
+     ARCMouseMoveArcStrokeWidth : 0,
+     ARCMouseOutDisplay : true,
+     ARCMouseOutAnimationTime : 500,
+     ARCMouseOutColor : "none",
+     ARCMouseOutArcOpacity : 1.0,
+     ARCMouseOutArcStrokeColor : "red",
+     ARCMouseOutArcStrokeWidth : 0,
+     ARCMouseUpDisplay : false,
+     ARCMouseUpColor : "grey",
+     ARCMouseUpArcOpacity : 1.0,
+     ARCMouseUpArcStrokeColor : "#F26223",
+     ARCMouseUpArcStrokeWidth : 0,
+     ARCMouseOverDisplay : true,
+     ARCMouseOverColor : "none",
+     ARCMouseOverArcOpacity : 1.0,
+     ARCMouseOverArcStrokeColor : "red", //"none","#F26223"
+     ARCMouseOverArcStrokeWidth : "none", //"none",3
+     ARCMouseOverTooltipsHtml01 : "",
+     ARCMouseOverTooltipsHtml02 : "<br>Position: ",
+     ARCMouseOverTooltipsHtml03 : "AA - ",
+     ARCMouseOverTooltipsHtml04 : "AA<br>Name: ",
+     ARCMouseOverTooltipsHtml05 : "",
+     ARCMouseOverTooltipsPosition : "absolute",
+     ARCMouseOverTooltipsBackgroundColor : "white",
+     ARCMouseOverTooltipsBorderStyle : "solid",
+     ARCMouseOverTooltipsBorderWidth : 0,
+     ARCMouseOverTooltipsPadding : "3px",
+     ARCMouseOverTooltipsBorderRadius : "3px",
+     ARCMouseOverTooltipsOpacity : 0.8,
+     genomeFillColor: ["#999999"],
+     ticks : {
+        display : true,
+        len : 5,
+        color : "#000",
+        textSize : 8,
+        textColor : "#000",
+        scale : 100
+     },
+     genomeLabel : {
+        display : true,
+        textSize : 18,
+        textColor : "red",
+        dx : 0.1,
+        dy : "-0.95em"
+     }
+  });
+  NGCircos01.draw_genome(NGCircos01.genomeLength);
+  NGCircos01.draw_genome(NGCircos01.genomeLength2); // NGCircos2.js callback second time
+</script>
+    </body>
+
+
+</html>

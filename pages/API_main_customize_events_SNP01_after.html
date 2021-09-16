@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>NGCircos.js</title>
+    </head>
+
+    <body>
+        <!-- NGCircos.js, Jquery.js and D3.js import -->
+        <script src="../lib/jquery.js"></script>
+        <script src="../lib/d3.js"></script>
+        <script src="../lib/NGCircos.js"></script>
+        <!-- Prepare a <div> tag with "NGCircos" id to set the picture position your will draw in html -->
+        <div id="NGCircos"></div>
+<!-- Data configuration -->
+<script src="../data/gallery/gallery06_SNP01.js"></script>
+<!-- Genome configuration -->
+<script>
+var TEXT01 = [ "TEXT01" , {
+   x: -10,
+   y: 0,
+   textSize: 10,
+   textWeight: "bold", //normal,bold,bolder,lighter,100,200,300,400,500,600,700,800,900
+   textColor: "red",
+   textOpacity: 1.0,
+   text: "EGFR"
+}];
+
+  var NGCircosGenome = [
+    [
+     ["EGFR" , 1211],
+    ]
+  ];
+
+  NGCircos01 = new NGCircos(TEXT01,BACKGROUND01,SNP01,NGCircosGenome,{
+     target : "NGCircos",
+     svgWidth : 900,
+     svgHeight : 600,
+     innerRadius: 246,
+     outerRadius: 250,
+     zoom : false,
+     SNPMouseEvent : true,
+     SNPMouseClickDisplay : true,
+     SNPMouseClickColor : "blue",
+     SNPMouseClickCircleSize : 8,
+     SNPMouseClickCircleOpacity : 1.0,
+     SNPMouseClickCircleStrokeColor : "#F26223",
+     SNPMouseClickCircleStrokeWidth : 0,
+     SNPMouseClickTextFromData : "fourth",   //first,second,third,fourth column
+     SNPMouseClickTextOpacity : 1,
+     SNPMouseClickTextColor : "green",
+     SNPMouseClickTextSize : 8,
+     SNPMouseClickTextPostionX : 1.0,
+     SNPMouseClickTextPostionY : 10,
+     SNPMouseClickTextDrag : true,
+     genomeFillColor: ["#999999"],
+     ticks : {
+        display : true,
+        len : 5,
+        color : "#000",
+        textSize : 8,
+        textColor : "#000",
+        scale : 20
+     },
+     genomeLabel : {
+        display : false,
+        textSize : 16,
+        textColor : "red",
+        dx : 3.14,
+        dy : "-0.95em"
+     }
+  });
+  NGCircos01.draw_genome(NGCircos01.genomeLength);
+  NGCircos01.draw_genome(NGCircos01.genomeLength2); 
+</script>
+    </body>
+
+
+</html>
